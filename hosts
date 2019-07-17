@@ -1,0 +1,9 @@
+[masters]
+master ansible_host=adnankhan1d.mylabserver.com ansible_user=cloud_user
+
+[workers]
+worker1 ansible_host=adnankhan2c.mylabserver.com ansible_user=cloud_user
+worker2 ansible_host=adnankhan3c.mylabserver.com ansible_user=cloud_user
+
+[all:vars]
+ansible_python_interpreter=/usr/bin/python3
