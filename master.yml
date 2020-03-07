@@ -9,7 +9,7 @@
 
     - name: create .kube directory
       become: yes
-      become_user: ansible 
+      become_user: adnan 
       file:
         path: $HOME/.kube
         state: directory
@@ -18,13 +18,13 @@
     - name: copy admin.conf to user's kube config
       copy:
         src: /etc/kubernetes/admin.conf
-        dest: /home/ansible/.kube/config
+        dest: /home/adnan/.kube/config
         remote_src: yes
-        owner: ansible 
+        owner: adnan 
 
     - name: install Pod network
       become: yes
-      become_user: ansible
+      become_user: adnan
       shell: kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/a70459be0084506e4ec919aa1c114638878db11b/Documentation/kube-flannel.yml >> pod_network_setup.txt
       args:
         chdir: $HOME
